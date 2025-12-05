@@ -1,0 +1,49 @@
+CUDA_VISIBLE_DEVICES=0,1 python ttavlm/main.py \
+--exp_name cliptta_open_imagenet \
+--adaptation cliptta \
+--distributed \
+--dataset imagenet \
+--ood_dataset places \
+--shift_type original \
+--batch_size 256 \
+--steps 10 \
+--seeds 42 \
+--lr 1e-5 \
+--beta_tta 1.0 \
+--beta_reg 1.0 \
+--beta_ood 1.0 \
+--id_score_type max_prob \
+--use_ood_loss \
+--detect_ood \
+--score_type max_log_prob \
+--update_alpha \
+--loss_ood_type avg_contrastive \
+--use_softmax_entropy \
+--use_memory \
+--num_shots 16 \
+--sample_size 64 \
+
+CUDA_VISIBLE_DEVICES=0,1 python ttavlm/main.py \
+--exp_name cliptta_open_imagenetc \
+--adaptation cliptta \
+--distributed \
+--dataset imagenetc \
+--ood_dataset placesc \
+--shift_type all \
+--batch_size 256 \
+--steps 10 \
+--seeds 42 \
+--lr 1e-4 \
+--beta_tta 1.0 \
+--beta_reg 0.5 \
+--beta_ood 1.0 \
+--id_score_type max_prob \
+--use_ood_loss \
+--detect_ood \
+--score_type max_log_prob \
+--update_alpha \
+--loss_ood_type avg_contrastive \
+--use_softmax_entropy \
+--use_memory \
+--num_shots 16 \
+--sample_size 64 \

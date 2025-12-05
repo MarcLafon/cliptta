@@ -1,0 +1,46 @@
+CUDA_VISIBLE_DEVICES=0,1 python ttavlm/main.py \
+--exp_name cliptta_open_cifar10 \
+--adaptation cliptta \
+--distributed \
+--dataset cifar10 \
+--ood_dataset svhn \
+--shift_type original \
+--steps 10 \
+--seeds 42 \
+--lr 1e-4 \
+--beta_tta 1.0 \
+--beta_reg 1.0 \
+--beta_ood 1.0 \
+--id_score_type max_prob \
+--use_ood_loss \
+--detect_ood \
+--score_type max_log_prob \
+--update_alpha \
+--loss_ood_type avg_contrastive \
+--use_softmax_entropy \
+--use_memory \
+--num_shots 16 \
+--sample_size 128 \
+
+CUDA_VISIBLE_DEVICES=0,1 python ttavlm/main.py \
+--exp_name cliptta_open_cifar10c \
+--adaptation cliptta \
+--distributed \
+--dataset cifar10c \
+--ood_dataset svhnc \
+--shift_type all \
+--steps 10 \
+--seeds 42 \
+--lr 1e-4 \
+--beta_tta 1.0 \
+--beta_reg 1.0 \
+--id_score_type max_prob \
+--use_ood_loss \
+--detect_ood \
+--score_type max_log_prob \
+--update_alpha \
+--loss_ood_type avg_contrastive \
+--use_softmax_entropy \
+--use_memory \
+--num_shots 16 \
+--sample_size 128 \

@@ -1,0 +1,19 @@
+# Utils
+matplotlib
+SciencePlots
+seaborn
+ipython
+jupyter
+colorlog
+termcolor
+wandb
+wandb-osh
+openpyxl
+
+# Dev
+ipdb
+autopep8
+flake8
+flake8-annotations
+pylint
+isort
